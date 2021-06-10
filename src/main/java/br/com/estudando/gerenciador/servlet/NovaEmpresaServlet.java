@@ -27,6 +27,7 @@ public class NovaEmpresaServlet extends HttpServlet {
 		empresa.setNome(nomeEmpresa);
 		
 		Banco banco = new Banco();
+		banco.adiciona(empresa);
 		
 		PrintWriter pw = response.getWriter();	
 		pw.println("<!DOCTYPE html>" + "<html>" + "<head>" + "<title>Meu Sistema Web Com Java</title>" + "</head>"
