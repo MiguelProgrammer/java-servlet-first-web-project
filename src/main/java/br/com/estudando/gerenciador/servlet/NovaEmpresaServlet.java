@@ -3,22 +3,18 @@ package br.com.estudando.gerenciador.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class NovaEmpresaServlet
- */
+
 @WebServlet("/novaEmpresa")
 public class NovaEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Cadastrando nova empresa");
 		
@@ -28,10 +24,10 @@ public class NovaEmpresaServlet extends HttpServlet {
 		
 		Banco banco = new Banco();
 		banco.adiciona(empresa);
-		
-		PrintWriter pw = response.getWriter();	
-		pw.println("<!DOCTYPE html>" + "<html>" + "<head>" + "<title>Meu Sistema Web Com Java</title>" + "</head>"
-				+ "<body>" + "	<h2>Empresa " + nomeEmpresa + " cadastrada com sucesso!</h2>" + "</body>" + "</html>");
+
+		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
+		request.setAttribute("nomeEmpresa", empresa.getNome());
+		rd.forward(request, response);
 	}
 
 }

@@ -16,10 +16,12 @@ public class Banco {
 		listaEmpresas.add(empresa2);
 	}
 	
+	@SuppressWarnings("static-access")
 	public void adiciona(Empresa empresa) {
 		this.listaEmpresas.add(empresa);
 	}
 	
+	@SuppressWarnings("static-access")
 	public List<Empresa> getEmpresas(){
 		return this.listaEmpresas;
 	}

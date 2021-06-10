@@ -1,10 +1,10 @@
 <%
-	String nome = "Nome Fantasia - LTDA";
+	String nome = (String) request.getAttribute("nomeEmpresa");
  %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta>
 <title>Minha Primeira JSP</title>
 </head>
 <body>
