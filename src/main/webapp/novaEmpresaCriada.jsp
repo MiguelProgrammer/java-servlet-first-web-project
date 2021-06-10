@@ -1,6 +1,3 @@
-<%
-	String nome = (String) request.getAttribute("nomeEmpresa");
- %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +5,6 @@
 <title>Minha Primeira JSP</title>
 </head>
 <body>
-	<h2>Empresa <%=nome%></h2>
+	<h2>Empresa ${nomeEmpresa}</h2>
 </body>
 </html>
