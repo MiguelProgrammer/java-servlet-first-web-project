@@ -12,11 +12,18 @@
 </head>
 <body>
 	<div class="form-group">
+	<hr>
+		<c:if test="${not empty nomeEmpresa }">
+			Empresa ${nomeEmpresa} - <fmt:formatDate value="${dataAbertura}"
+				pattern="dd/MM/yyyy" /> cadastrada com sucesso!
+		</c:if>
+		<hr>
 		<p>Lista de Empresas</p>
 		<hr>
 		<ul>
-			<c:forEach items="${nomeEmpresa}" var="emp">
-				<li>${emp.nome} - <fmt:formatDate value="${emp.dataAbertura}" pattern="dd/MM/yyyy"/></li>
+			<c:forEach items="${nomeEmpresas}" var="emp">
+				<li>${emp.nome}- <fmt:formatDate value="${emp.dataAbertura}"
+						pattern="dd/MM/yyyy" /></li>
 			</c:forEach>
 		</ul>
 	</div>
