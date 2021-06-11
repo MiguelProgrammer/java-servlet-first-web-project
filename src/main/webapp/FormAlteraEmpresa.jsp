@@ -13,11 +13,11 @@
 		<label for="nome"> 
 		Nome: <input type="text" name="nome" id="nome" value="${empresa.nome}" />
 		</label>
-		
 		<label for="data"> 
 			Data Abertura: <input type="text" name="data" id="data" value="<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy" />" />
-			<button type="submit">Atualizar</button>
 		</label>
+		<input type="hidden" name="idEmpresa" value="${empresa.id}">
+		<button type="submit">Atualizar</button>
 	</form>
 </body>
 </html>
