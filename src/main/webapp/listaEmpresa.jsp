@@ -3,6 +3,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="br.com.estudando.gerenciador.servlet.*,java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +16,7 @@
 		<hr>
 		<ul>
 			<c:forEach items="${nomeEmpresa}" var="emp">
-				<li>${emp.nome}</li>
+				<li>${emp.nome} - <fmt:formatDate value="${emp.dataAbertura}" pattern="dd/MM/yyyy"/></li>
 			</c:forEach>
 		</ul>
 	</div>

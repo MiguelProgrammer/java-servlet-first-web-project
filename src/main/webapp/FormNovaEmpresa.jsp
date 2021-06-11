@@ -9,6 +9,8 @@
 <body>
 	<form action="${novaEmpresa}" method="post">
 		<label for="nome"> Nome: <input type="text" name="nome" id="nome" />
+		</label>
+		<label for="data"> Data Abertura: <input type="text" name="data" id="data" />
 			<button type="submit">Cadastrar</button>
 		</label>
 	</form>
